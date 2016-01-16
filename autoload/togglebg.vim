@@ -26,6 +26,12 @@ tmenu ToolBar.togglebg Toggle light and dark background modes
 noremap <SID>TogBG  :call <SID>TogBG()<CR>
 
 function! s:TogBG()
+    if &background == "dark"
+      echom system("~/gnome-terminal-colors-solarized/set_light.sh")
+    else
+      echom system("~/gnome-terminal-colors-solarized/set_dark.sh")
+    endif
+
     let &background = ( &background == "dark"? "light" : "dark" )
     if exists("g:colors_name")
         exe "colorscheme " . g:colors_name
