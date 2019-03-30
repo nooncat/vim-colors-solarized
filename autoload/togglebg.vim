@@ -27,9 +27,9 @@ noremap <SID>TogBG  :call <SID>TogBG()<CR>
 
 function! s:TogBG()
     if &background == "dark"
-      echom system("~/gnome-terminal-colors-solarized/set_light.sh")
+      echom system("~/gnome-terminal-colors-solarized/set_light.sh Default --skip-dircolors")
     else
-      echom system("~/gnome-terminal-colors-solarized/set_dark.sh")
+      echom system("~/gnome-terminal-colors-solarized/set_dark.sh Default --skip-dircolors")
     endif
 
     let &background = ( &background == "dark"? "light" : "dark" )
