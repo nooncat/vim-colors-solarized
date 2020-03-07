@@ -36,6 +36,9 @@ function! s:TogBG()
     if exists("g:colors_name")
         exe "colorscheme " . g:colors_name
     endif
+
+    " remove underline from current line number highlighting
+    hi CursorLineNr cterm=none
 endfunction
 
 if !exists(":ToggleBG")
